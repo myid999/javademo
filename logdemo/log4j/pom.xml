@@ -3,23 +3,30 @@
 	<modelVersion>4.0.0</modelVersion>
 	
 	<parent>
-		<artifactId>javademo</artifactId>
+		<artifactId>logdemo</artifactId>
 		<groupId>demo.java</groupId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>	
 	
 
-	<artifactId>logdemo</artifactId>
-	<packaging>pom</packaging>
-	<name>java log libs demo</name>
+	<artifactId>log4j</artifactId>
+	<packaging>jar</packaging>
+	<name>log4j 1 log</name>
 
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
+
+
+	<dependencies>
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>1.2.17</version>
+		</dependency>
+
+	</dependencies>
+
 	
-	<modules>
-		<module>jdklog</module>
-		<module>log4j</module>
-	</modules>
 </project>
