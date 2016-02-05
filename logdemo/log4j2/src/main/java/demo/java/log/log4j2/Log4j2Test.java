@@ -29,9 +29,27 @@ import demo.java.log.log4j2.b.DummyB;
  *可选的打印目的地很多，如console、文件、远程socket server等。LogEvent是由Appenders来实际传递到最终输出目的地的，
  *而在LogEvent到达最终被处理之前，还需要经过若干filter的过滤，用来判断该EventLog应该在何处被转发、何处被驳回、何处被执行。
  *
- *
+ *Logger : Logger的层次则是靠LoggerConfig对象之间的关系来维护的
+ *LoggerConfig: Logger与LoggerConfig按照标记点（即“.”）来进行匹配，只有两个标记点之间的字串完全匹配才算，否则将取上一段完全匹配的字串的长度作为最终匹配长度。
+ *LoggerContext: LoggerContext在Logging System中扮演了锚点的角色。根据情况的不同，
+ *		一个应用可能同时存在于多个有效的LoggerContext中。在同一LoggerContext下，log system是互通的。
+ *Configuration: 每一个LoggerContext都有一个有效的Configuration。Configuration包含了所有的Appenders、上下文范围内的过滤器、LoggerConfigs以及StrSubstitutor.的引用。
+ *Filter： log4j2的过滤器也将返回三类状态：Accept（接受）, Deny（拒绝） 或Neutral（中立）
+ *Appender： 一个Logger可以绑定多个不同的Appender。 additivity="false" 关闭appender的继承
+ *Layout：定义输出的格式
+ *LogEvent： 
  *
  *level: TRACE, DEBUG,INFO, WARN, ERROR 以及FATAL
+ *默认的输出地是console，默认的级别是ERROR级别
+ *
+ *
+ *log4j2配置文件查找顺序
+ *1. 设置"log4j.configurationFile" system property
+ *2. log4j2-test.json 或log4j2-test.jsn文件
+ *3. log4j2-test.xml文件
+ *4. log4j2.json 或log4j2.jsn文件
+ *5. log4j2.xml文件
+ *
  *
  *
  *
@@ -43,6 +61,7 @@ public class Log4j2Test {
 		
 	}
 	
+	Logger rootlogger = LogManager.getLogger(LogManager.ROOT_LOGGER_NAME);
 	
 	private static final Logger logger = LogManager.getLogger(Log4j2Test.class);
 
@@ -55,7 +74,6 @@ public class Log4j2Test {
         logger.warn("Log4j2Test warn");
         logger.fatal("Log4j2Test fatal");
         logger.log(Level.DEBUG, "Log4j2Test Level.DEBUG");   //这个就是制定Level类型的调用：谁闲着没事调用这个，也不一定哦！
-        
 		
 		DummyA.printLogs();
 		DummyB.printLogs();	      

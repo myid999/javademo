@@ -21,5 +21,6 @@
 	<modules>
 		<module>jdklog</module>
 		<module>log4j</module>
+		<module>log4j2</module>
 	</modules>
 </project>
