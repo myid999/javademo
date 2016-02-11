@@ -52,6 +52,12 @@ import demo.java.log.log4j2.b.DummyB;
  *
  *
  *
+    LogManager： 它的类加载会去寻找LoggerContextFactory接口的底层实现，会从jar包中的配置文件中寻找，如上面所述
+    LoggerContextFactory ： 用于创建LoggerContext，不同的日志实现系统会有不同的实现，如log4j-core中的实现为Log4jContextFactory
+    PropertyConfigurator: 用于解析log4j.properties文件
+    LoggerContext : 它包含了配置信息，并能创建log4j-api定义的Logger接口实例，并缓存这些实例
+    ConfigurationFactory：上述LoggerContext解析配置文件，需要用到ConfigurationFactory，目前有三个YamlConfigurationFactory、JsonConfigurationFactory、XmlConfigurationFactory，分别解析yuml json xml形式的配置文件
+
  *
  */
 public class Log4j2Test {

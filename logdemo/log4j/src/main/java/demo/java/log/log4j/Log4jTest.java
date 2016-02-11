@@ -22,6 +22,14 @@ import demo.java.log.log4j.b.DummyB;
  *
  *
  *
+    LogManager： 它的类加载会创建logger仓库Hierarchy，并尝试寻找类路径下的配置文件，如果有则解析
+    Hierarchy ： 包含三个重要属性：
+        LoggerFactory logger的创建工厂
+        Hashtable 用于存放上述工厂创建的logger
+        Logger root logger,用于承载解析文件的结果，设置级别，同时存放appender
+    PropertyConfigurator: 用于解析log4j.properties文件
+    Logger : 我们用来输出日志的对象
+
  *
  */
 public class Log4jTest {
@@ -34,6 +42,13 @@ public class Log4jTest {
         
         //加载指定的配置文件
 //        PropertyConfigurator.configure("D:/Code/conf/log4j.properties");
+		
+//		使用classLoader来加载资源
+//		PropertyConfigurator.configure(Log4jTest.class.getClassLoader().getResource(“properties/log4j.properties”));
+
+		//		使用log4j自带的Loader来加载资源
+//		PropertyConfigurator.configure(Loader.getResource(“properties/log4j.properties”));
+
 	}
 	
 	
