@@ -27,7 +27,7 @@
 
 	</dependencies>
 
-	<build>
+<!-- 	<build>
 		<finalName>${artifactId}</finalName>
 		<plugins>
 			<plugin>
@@ -40,7 +40,7 @@
 			</plugin>
 
 		</plugins>
-	</build>
+	</build> -->
 	<modules>
 		<module>core</module>
 		<module>logdemo</module>
