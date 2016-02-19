@@ -12,6 +12,8 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+import demo.java.v1c13collection.IteratorDemo;
+
 public class IteratorDemoTest {
 
 	private static final Logger logger = LogManager.getLogger(IteratorDemoTest.class);
