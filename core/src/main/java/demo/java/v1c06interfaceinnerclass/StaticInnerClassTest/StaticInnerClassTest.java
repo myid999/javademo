@@ -12,6 +12,7 @@ public class StaticInnerClassTest
       for (int i = 0; i < d.length; i++)
          d[i] = 100 * Math.random();
       ArrayAlg.Pair p = ArrayAlg.minmax(d);
+     // ArrayAlg.Pair px = new  ArrayAlg.Pair(1.1,1.1); //correct
       System.out.println("min = " + p.getFirst());
       System.out.println("max = " + p.getSecond());
    }

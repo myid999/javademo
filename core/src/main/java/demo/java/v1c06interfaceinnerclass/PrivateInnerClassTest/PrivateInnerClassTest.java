@@ -1,4 +1,4 @@
-package demo.java.v1c06interfaceinnerclass.InnerClassTest;
+package demo.java.v1c06interfaceinnerclass.PrivateInnerClassTest;
 import java.awt.*;
 import java.awt.event.*;
 import java.util.*;
@@ -6,22 +6,20 @@ import java.util.*;
 import javax.swing.*;
 import javax.swing.Timer;
 
-import demo.java.v1c06interfaceinnerclass.InnerClassTest.TalkingClock.TimePrinter;
-
 
 /**
  * This program demonstrates the use of inner classes.
  * @version 1.10 2004-02-27
  * @author Cay Horstmann
  */
-public class InnerClassTest
+public class PrivateInnerClassTest
 {
    public static void main(String[] args)
    {
 	   
 	   
       TalkingClock clock = new TalkingClock(1000, true);
-      TimePrinter ccc = clock.new  TimePrinter();
+//      ActionListener ccc = clock.new  TimePrinter(); //private inner class is not visible
       clock.start();
 
       // keep program running until user selects "Ok"
@@ -59,7 +57,7 @@ class TalkingClock
    private int interval;
    private boolean beep;
 
-   public class TimePrinter implements ActionListener
+   private class TimePrinter implements ActionListener
    {
       public void actionPerformed(ActionEvent event)
       {
@@ -68,4 +66,6 @@ class TalkingClock
          if (beep) Toolkit.getDefaultToolkit().beep();
       }
    }
+   
+   
 }

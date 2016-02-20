@@ -30,3 +30,36 @@ enum Size
 
    private String abbreviation;
 }
+
+
+enum SizeA implements Runnable{
+	SMALL("S", "160"), MEDIUM("M", "165","vvv"), LARGE("L", "170"), EXTRA_LARGE("XL", "175");
+
+	private SizeA(String abbreviation, String height) {
+		this.abbreviation = abbreviation;
+		this.height = height;
+	}
+	
+	   private SizeA(String abbreviation,String vv,String bb) { this.abbreviation = abbreviation; }	
+
+	public String getAbbreviation() {
+		return abbreviation;
+	}
+
+	public String getHeight() {
+		return height;
+	}
+
+	private String abbreviation;
+	private String height;
+	
+	
+	@Override
+	public void run() {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	
+	private int size;
+}

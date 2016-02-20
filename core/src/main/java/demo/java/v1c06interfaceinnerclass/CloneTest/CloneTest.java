@@ -25,6 +25,10 @@ public class CloneTest
          e.printStackTrace();
       }
    }
+   
+   
+
+   
 }
 
 class Employee implements Cloneable
@@ -75,4 +79,22 @@ class Employee implements Cloneable
    private String name;
    private double salary;
    private Date hireDay;
+}
+
+
+class TestA{
+	
+	public static void test(){
+		TestA ta = new TestA();
+		try {
+			ta.clone();
+		} catch (CloneNotSupportedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+	}
+	
+	
 }

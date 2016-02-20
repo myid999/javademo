@@ -2,6 +2,8 @@ package demo.java.v1c04objectclass.CalendarTest;
 import java.text.DateFormatSymbols;
 import java.util.*;
 
+import demo.java.v1c04objectclass.ConstructorTest.*;
+
 /**
  * @version 1.4 2007-04-07
  * @author Cay Horstmann
@@ -72,4 +74,11 @@ public class CalendarTest
       // print final end of line if necessary
       if (weekday != firstDayOfWeek) System.out.println();
    }
+   
+   public void testClassPublic(){
+	   ConstructorTest ct = new ConstructorTest();
+	  // Employee ee = new Employee();
+   }
+   
+   
 }

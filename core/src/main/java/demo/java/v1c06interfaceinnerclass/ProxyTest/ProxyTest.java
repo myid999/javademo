@@ -17,7 +17,11 @@ public class ProxyTest
       for (int i = 0; i < elements.length; i++)
       {
          Integer value = i + 1;
+         
+         //create proxy class handler
          InvocationHandler handler = new TraceHandler(value);
+         
+         //create proxy class
          Object proxy = Proxy.newProxyInstance(null, new Class[] { Comparable.class } , handler);
          elements[i] = proxy;
       }
