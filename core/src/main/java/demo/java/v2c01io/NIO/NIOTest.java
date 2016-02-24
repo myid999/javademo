@@ -4,12 +4,6 @@ import java.nio.*;
 import java.nio.channels.*;
 import java.util.zip.*;
 
-/**
- * This program computes the CRC checksum of a file. <br>
- * Usage: java NIOTest filename
- * @version 1.01 2004-05-11
- * @author Cay Horstmann
- */
 public class NIOTest
 {
    public static long checksumInputStream(String filename) throws IOException

@@ -1,6 +1,5 @@
 package demo.java.v2c01io.SerialCloneTest;
 
-
 import java.io.*;
 import java.util.*;
 
@@ -32,8 +31,7 @@ class SerialCloneable implements Cloneable, Serializable {
 			out.close();
 
 			// read a clone of the object from the byte array
-			ByteArrayInputStream bin = new ByteArrayInputStream(
-					bout.toByteArray());
+			ByteArrayInputStream bin = new ByteArrayInputStream(bout.toByteArray());
 			ObjectInputStream in = new ObjectInputStream(bin);
 			Object ret = in.readObject();
 			in.close();
@@ -82,18 +80,16 @@ class Employee extends SerialCloneable {
 	}
 
 	public String toString() {
-		return getClass().getName() + "[name=" + name + ",salary=" + salary
-				+ ",hireDay=" + hireDay + "]";
+		return getClass().getName() + "[name=" + name + ",salary=" + salary + ",hireDay=" + hireDay + "]";
 	}
-	
-	private void readObject(ObjectInputStream in ) throws IOException, ClassNotFoundException{
+
+/*	private void readObject(ObjectInputStream in) throws IOException, ClassNotFoundException {
 		System.out.println(" readObject(ObjectInputStream in )");
 	}
-	
-	private void writeObject(ObjectOutputStream out ) throws IOException{
+
+	private void writeObject(ObjectOutputStream out) throws IOException {
 		System.out.println(" writeObject(ObjectOutputStream out )");
-	}
-		
+	}*/
 
 	private String name;
 	private double salary;
